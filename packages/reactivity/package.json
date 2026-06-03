@@ -1,0 +1,23 @@
+{
+  "name": "@vue/reactivity",
+  "version": "0.0.1",
+  "module": "dist/reactivity.esm-builder.js",
+  "unpkg": "dist/reactivity.unpkg.js",
+  "buildOptions": {
+    "name": "Reactivity",
+    "banner": "Reactivity System for Vue 3",
+    "formats": [
+      "esm-builder",
+      "esm-browser",
+      "cjs",
+      "global"
+    ]
+  },
+  "description": "Reactivity System for Vue 3",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/shared": "workspace:^"
+  }
+}

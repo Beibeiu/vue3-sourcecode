@@ -1,0 +1,20 @@
+{
+  "name": "@vue/shared",
+  "version": "0.0.1",
+  "module": "dist/shared.esm-builder.js",
+  "unpkg": "dist/shared.unpkg.js",
+  "buildOptions": {
+    "name": "Shared",
+    "banner": "Shared Utils for Vue 3",
+    "formats": [
+      "esm-builder",
+      "esm-browser",
+      "cjs",
+      "global"
+    ]
+  },
+  "description": "Shared Utils for Vue 3",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT"
+}

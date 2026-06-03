@@ -1,0 +1,23 @@
+<!--
+ * @Description: 测试reactivity模块
+ * @Author: Bei
+ * @Date: 2026-06-02 20:46:33
+ * @LastEditTime: 2026-06-02 20:52:25
+ * @LastEditors: Bei
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script src="./index.js"></script> -->
+    <script type="module">
+      import { reactive } from "/node_modules/@vue/reactivity/dist/reactivity.esm-browser.js";
+      console.log(reactive);
+      console.log(reactive({ a: 1 }));
+    </script>
+  </body>
+</html>

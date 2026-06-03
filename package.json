@@ -1,0 +1,23 @@
+{
+  "name": "vue3-sourcecode",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js reactivity ",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.5.35"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "minimist": "^1.2.8",
+    "typescript": "^6.0.3"
+  }
+}

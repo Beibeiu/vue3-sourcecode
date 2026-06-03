@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "node", // 模块解析方式
+    "strict": false, // 严格模式
+    "resolveJsonModule": true, // 允许导入 JSON 模块
+    "esModuleInterop": true, // 允许使用 ES 模块语法
+    "jsx": "preserve", // 保留JSX语法
+    "lib": ["esnext", "dom"], // 允许的库
+    "baseUrl": ".",
+    "paths": {
+      "@vue/*": ["packages/*"]
+    }
+  }
+}
