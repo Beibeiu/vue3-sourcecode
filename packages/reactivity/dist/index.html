@@ -2,7 +2,7 @@
  * @Description: 测试reactivity模块
  * @Author: Bei
  * @Date: 2026-06-02 20:46:33
- * @LastEditTime: 2026-06-02 20:52:25
+ * @LastEditTime: 2026-06-15 19:59:29
  * @LastEditors: Bei
 -->
 <!doctype html>
@@ -13,11 +13,22 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <script src="./index.js"></script> -->
+    <div id="app"></div>
     <script type="module">
-      import { reactive } from "/node_modules/@vue/reactivity/dist/reactivity.esm-browser.js";
-      console.log(reactive);
-      console.log(reactive({ a: 1 }));
+      import { reactive, effect } from "./reactivity.js";
+
+      let obj = { name: "Bei", age: 18 };
+      const obj1 = reactive(obj);
+      const obj2 = reactive(obj1);
+
+      console.log(obj1.name);
+
+      // 1. obj1 是一个 Proxy 对象
+      // 2. 访问 obj1[ReactiveFlags.IS_REACTIVE] 会触发 get 陷阱
+      // 3. get 陷阱返回 true （第 30 行）
+      // 4. 条件成立，直接返回 target （也就是 obj1 本身）
+      // 实现了对 obj1 的重复调用，返回的是同一个对象
+      console.log(obj1 === obj2);
     </script>
   </body>
 </html>
