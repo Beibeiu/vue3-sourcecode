@@ -2,14 +2,14 @@
  * @Description: 响应式对象
  * @Author: Bei
  * @Date: 2026-06-03 10:34:49
- * @LastEditTime: 2026-06-15 20:05:43
+ * @LastEditTime: 2026-07-15 17:38:48
  * @LastEditors: Bei
  */
 import { isObject } from "@vue/shared";
 
-import { mutableHandlers, ReactiveFlags } from "./baseHandler";
-// 响应式对象缓存，避免重复创建代理对象，提高性能
-const reactiveMap = new WeakMap();
+import { mutableHandlers } from "./baseHandler";
+
+const reactiveMap = new WeakMap(); // 用于记录代理后的结果，避免重复创建代理对象，提高性能
 // 响应式对象标志位
 enum ReactiveFlags {
   IS_REACTIVE = "__v_isReactive",
@@ -22,8 +22,9 @@ enum ReactiveFlags {
  */
 function createReactiveObject(target) {
   console.log("创建响应式对象", target);
-  // 非对象类型直接返回
+  // 非对象类型直接返回（响应式对象只能是对象类型）
   if (!isObject(target)) {
+    console.log("isObject判断-非对象类型直接返回", target);
     return target;
   }
   // 已存在响应式对象标志位，直接返回
